@@ -1,8 +1,8 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-const PORT = process.env.PORT || 3000;
+const express = require('express');
+const path = require('path');
+const app = express();
 const staticPath = path.join(__dirname,'../public');
+const PORT = process.env.PORT || 5000;
 app.use(express.static(staticPath));
 app.set("view engine","hbs")
 
@@ -17,5 +17,3 @@ app.get('/code', function (req, res) {
 app.listen(PORT, function () {
 console.log('Example app listening on port ${PORT}');
 });
-
-//console.log(path.join(__dirname,'../public'))
